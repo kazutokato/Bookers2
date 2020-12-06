@@ -5,14 +5,16 @@
   <% end %>
 <% end %>
 
-<%= render 'books/list', books: @books %>
+<%= render 'books/list', books: @book %>
 
 <h2>Books</h2>
 <p>Title</p>
 <p>Opinion</p>
 <% @books.each do |book| %>
 <div>
-  <p><%= book.title %></p>
+  <%= link_to book_path(book.id) do %>
+  <%= book.title %>
+  <% end %>
   <p><%= book.body %></p>
 </div>
 <% end %>

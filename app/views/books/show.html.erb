@@ -1,5 +1,11 @@
+<%= render 'books/list', books: @books %>
+
 <h2>Book detail</h2>
 <div class="book-body">
+  <%= link_to book_path(@book.id) do %>
   <%= @book.title %>
+  <% end %>
   <%= @book.body %>
-</div>
+
+  <%= link_to "Edit", edit_book_path(@book.id) %>
+  <%= link_to "Destroy", book_path(@book.id), method: :delete %>
