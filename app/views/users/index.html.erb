@@ -1,0 +1,11 @@
+<%= render 'books/list', user: @user %>
+
+<h2>Users</h2>
+<p>image</p>
+<p>name</p>
+
+<% @users.each do |user| %>
+<div>
+  <%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
+</div>
+<% end %>

@@ -1,17 +1,12 @@
-<% if @book.errors.any? %>
-  <%= @book.errors.count %> errors prohibited this obj from being saved:
-  <% @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
 
-<%= render 'books/list', books: @book %>
+<%= render 'books/list', user: @user %>
 
 <h2>Books</h2>
 <p>Title</p>
 <p>Opinion</p>
 <% @books.each do |book| %>
 <div>
+  <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
   <%= link_to book_path(book.id) do %>
   <%= book.title %>
   <% end %>
