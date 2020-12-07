@@ -8,12 +8,12 @@
 <h2>User info</h2>
 
 <div class="profile-container">
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
   <th class="profile-name">name</th>
-  <%= @user.name %>
+  <%= user.name %>
   <th class="profile-introduction">introduction</th>
-  <%= @user.introduction %>
-  <p><%= link_to "⚙", edit_user_path(@user) %></p>
+  <%= user.introduction %>
+  <p><%= link_to "⚙", edit_user_path(user) %></p>
 </div>
 
 <h2>New book</h2>

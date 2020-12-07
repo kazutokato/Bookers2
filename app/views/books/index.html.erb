@@ -16,9 +16,11 @@
 <p>Opinion</p>
 <% @books.each do |book| %>
 <div>
-  <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
+  <%= link_to user_path(book.user.id) do %>
+    <%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
+  <% end %>
   <%= link_to book_path(book.id) do %>
-  <%= book.title %>
+    <%= book.title %>
   <% end %>
   <p><%= book.body %></p>
 </div>
