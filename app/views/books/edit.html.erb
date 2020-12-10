@@ -1,7 +1,19 @@
+
+
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 col-sm-0 mx-auto">
       <h1>Editing Book</h1>
+      <div id="error_explanation">
+        <% if @book.errors.any? %>
+          <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
+          <ul>
+            <% @book.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
       <%= form_with model: @book, local:true do |f| %>
         <div class="form-group">
           <label for="book_title">Title</label>
@@ -16,6 +28,7 @@
         </div>
       <% end %>
       <%= link_to "Show", book_path(@book) %>
+        |
       <%= link_to "Back", books_path %>
     </div>
   </div>
