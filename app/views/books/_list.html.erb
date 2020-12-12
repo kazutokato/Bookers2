@@ -4,7 +4,7 @@
     <div class="col-md-3">
       <h2>User info</h2>
         <div>
-        <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+        <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: '100x100' %>
         </div>
           <table class="table">
             <tbody>
