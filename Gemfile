@@ -72,3 +72,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 
 gem 'data-confirm-modal'
+
+gem 'pry-byebug'
