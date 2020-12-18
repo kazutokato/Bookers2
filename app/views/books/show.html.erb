@@ -91,31 +91,31 @@
         </table>
         <table class="table">
           <tbody>
-            <tr>
-              <div class="comments">
+            <div class="comments">
               <% @book.book_comments.each do |book_comment| %>
-                <td>
-                  <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: '40x40' %><br>
-                  <%= book_comment.user.name %>
-                </td>
-                <td>
-                  <%= book_comment.comment %>
-                </td>
-                <td>
-                  <% if book_comment.user == current_user %>
-                    <div class="comment-delete">
-                      <%= link_to "Destroy", book_book_comments_path(book_comment.book, book_comment), method: :delete, class: "btn btn-sm btn-danger" %>
-                    </div>
-                  <% end %>
-                </td>
+                <tr>
+                  <td>
+                    <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: '40x40' %><br>
+                    <%= book_comment.user.name %>
+                  </td>
+                  <td>
+                    <%= book_comment.comment %>
+                  </td>
+                  <td>
+                    <% if book_comment.user == current_user %>
+                      <div class="comment-delete">
+                        <%= link_to "Destroy", book_book_comments_path(book_comment.book, book_comment), method: :delete, class: "btn btn-sm btn-danger" %>
+                      </div>
+                    <% end %>
+                  </td>
+                <tr>
               <% end %>
-              </div>
-            <tr>
+            </div>
           <tbody>
         </table>
         <div class="new-comment">
         <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
-          <%= f.text_area :comment, rows:'5' %>
+          <%= f.text_area :comment, size: "80x5" %>
           <%= f.submit "送信", class:"btn btn-sm btn-success" %>
         <% end %>
         </div>
