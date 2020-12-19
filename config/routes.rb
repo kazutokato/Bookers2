@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   post 'follow/:id' => 'relationships#follow', as: 'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
+  get 'follower/:id' => 'users#follower', as: 'follower'
+  get 'followed/:id' => 'users#followed', as: 'followed'
 
 end
