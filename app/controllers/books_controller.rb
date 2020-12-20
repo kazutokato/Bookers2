@@ -19,6 +19,8 @@ class BooksController < ApplicationController
   def create
     # binding.pry
     @book_new = Book.new(book_params)
+    @books = Book.all
+    @user = User.find(current_user.id)
     @book_new.user_id = current_user.id
     if @book_new.save
       flash[:notice] = "You have created book successfully."
