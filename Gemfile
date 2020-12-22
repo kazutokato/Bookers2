@@ -73,4 +73,6 @@ gem 'font-awesome-sass', '~> 5.13'
 
 gem 'data-confirm-modal'
 
+gem 'jp_prefecture'
+
 gem 'pry-byebug'
